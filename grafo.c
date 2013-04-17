@@ -17,9 +17,9 @@ void cria_grafo_vazio(Grafo *grafo) {
 
 /* O(1) */
 void insere_aresta(int v1, int v2, Grafo *grafo) {
-   if(v1 <= 0 && v1 > VERTICES)
+   if(v1 <= 0 || v1 > VERTICES)
       return; /* Erro: Vértice está fora dos limites*/
-   if(v2 <= 0 && v2 > VERTICES)
+   if(v2 <= 0 || v2 > VERTICES)
       return; /* Erro: Vértice está fora dos limites*/
    if(grafo == NULL)
       return; /* Erro: Grafo é null */
@@ -30,9 +30,9 @@ void insere_aresta(int v1, int v2, Grafo *grafo) {
 
 /* O(1) */
 trool existe_aresta(int v1, int v2, Grafo *grafo) {
-   if(v1 <= 0 && v1 > VERTICES)
+   if(v1 <= 0 || v1 > VERTICES)
       return error; /* Erro: Vértice está fora dos limites*/
-   if(v2 <= 0 && v2 > VERTICES)
+   if(v2 <= 0 || v2 > VERTICES)
       return error; /* Erro: Vértice está fora dos limites*/
    if(grafo == NULL)
       return error; /* Erro: Grafo é null */
@@ -42,9 +42,9 @@ trool existe_aresta(int v1, int v2, Grafo *grafo) {
 
 /* O(1) */
 void retira_aresta(int v1, int v2, Grafo *grafo) {
-   if(v1 <= 0 && v1 > VERTICES)
+   if(v1 <= 0 || v1 > VERTICES)
       return; /* Erro: Vértice está fora dos limites*/
-   if(v2 <= 0 && v2 > VERTICES)
+   if(v2 <= 0 || v2 > VERTICES)
       return; /* Erro: Vértice está fora dos limites*/
    if(grafo == NULL)
       return; /* Erro: Grafo é null */
@@ -95,7 +95,7 @@ void grafo_transposto(Grafo *grafo, Grafo *grafo_t) {
 
 /* O(n) */
 void vertice_adjacente(int v1, Grafo *grafo) {
-   if(v1 <= 0 && v1 > VERTICES)
+   if(v1 <= 0 || v1 > VERTICES)
       return; /* Erro: Vértice está fora dos limites*/
    if(grafo == NULL)
       return; /* Erro: Grafo é null */
@@ -111,7 +111,7 @@ void vertice_adjacente(int v1, Grafo *grafo) {
 
 /* O(n) */
 int grau_vertice(int v1, Grafo *grafo) {
-   if(v1 <= 0 && v1 > VERTICES)
+   if(v1 <= 0 || v1 > VERTICES)
       return -1; /* Erro: Vértice está fora dos limites*/
    if(grafo == NULL)
       return -1; /* Erro: Grafo é null */

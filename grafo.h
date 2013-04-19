@@ -29,7 +29,7 @@
 	void existe_aresta(int v1, int v2, Grafo *grafo);
 
 	// Remove aresta entre os vértices v1 e v2
-	void retira_aresta(int v1, int v2, Grafo *grafo);
+	int retira_aresta(int v1, int v2, Grafo *grafo);
 
 	// Remove arco entre os vértices v1 e v2
 	void retira_arco(int v1, int v2, Grafo *grafo);

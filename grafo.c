@@ -89,19 +89,20 @@ void existe_aresta(int v1, int v2, Grafo *grafo) {
 }
 
 // O(1)
-void retira_aresta(int v1, int v2, Grafo *grafo) {
+int retira_aresta(int v1, int v2, Grafo *grafo) {
    if(v1 <= 0 || v1 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 1; // Erro: Vértice está fora dos limites
    if(v2 <= 0 || v2 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 2; // Erro: Vértice está fora dos limites
    if(grafo == NULL)
-      return; // Erro: Grafo é null
+      return 3; // Erro: Grafo é null
       
    v1--;
    v2--;
 
    grafo->matriz_adjacencia[v1][v2] = 0;
    grafo->matriz_adjacencia[v2][v1] = 0;
+   return 4;
 }
 
 // O(1)

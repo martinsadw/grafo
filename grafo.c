@@ -38,54 +38,56 @@ void imprime_grafo(Grafo *grafo) {
 }
 
 // O(1)
-void insere_aresta(int v1, int v2, Grafo *grafo) {
+int insere_aresta(int v1, int v2, Grafo *grafo) {
    if(v1 <= 0 || v1 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 1; // Erro: Vértice está fora dos limites
    if(v2 <= 0 || v2 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 2; // Erro: Vértice está fora dos limites
    if(grafo == NULL)
-      return; // Erro: Grafo é null
+      return 3; // Erro: Grafo é null
 
    v1--;
    v2--;
 
    grafo->matriz_adjacencia[v1][v2] = 1;
    grafo->matriz_adjacencia[v2][v1] = 1;
+   return 4;
 }
 
 // O(1)
-void insere_arco(int v1, int v2, Grafo *grafo) {
+int insere_arco(int v1, int v2, Grafo *grafo) {
    if(v1 <= 0 || v1 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 1; // Erro: Vértice está fora dos limites
    if(v2 <= 0 || v2 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 2; // Erro: Vértice está fora dos limites
    if(grafo == NULL)
-      return; // Erro: Grafo é null
+      return 3; // Erro: Grafo é null
 
    v1--;
    v2--;
 
    grafo->matriz_adjacencia[v1][v2] = 1;
+   return 4;
 }
 
 // O(1)
-void existe_aresta(int v1, int v2, Grafo *grafo) {
+int existe_aresta(int v1, int v2, Grafo *grafo) {
    if(v1 <= 0 || v1 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 1; // Erro: Vértice está fora dos limites
    if(v2 <= 0 || v2 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 2; // Erro: Vértice está fora dos limites
    if(grafo == NULL)
-      return; // Erro: Grafo é null
+      return 3; // Erro: Grafo é null
 
    v1--;
    v2--;
 
 	if(grafo->matriz_adjacencia[v1][v2] == 1 && grafo->matriz_adjacencia[v2][v1] == 1)
-		printf("Existe aresta %d,%d", v1, v2);
+		return 4;
 	else if(grafo->matriz_adjacencia[v1][v2] == 1)
-		printf("Existe arco %d,%d", v1, v2);
+		return 5;
 	else if(grafo->matriz_adjacencia[v2][v1] == 1)
-		printf("Existe arco %d,%d", v2, v1);
+		return 6;
 }
 
 // O(1)
@@ -106,18 +108,19 @@ int retira_aresta(int v1, int v2, Grafo *grafo) {
 }
 
 // O(1)
-void retira_arco(int v1, int v2, Grafo *grafo) {
+int retira_arco(int v1, int v2, Grafo *grafo) {
    if(v1 <= 0 || v1 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 1; // Erro: Vértice está fora dos limites
    if(v2 <= 0 || v2 > VERTICES)
-      return; // Erro: Vértice está fora dos limites
+      return 2; // Erro: Vértice está fora dos limites
    if(grafo == NULL)
-      return; // Erro: Grafo é null
+      return 3; // Erro: Grafo é null
       
    v1--;
    v2--;
 
    grafo->matriz_adjacencia[v1][v2] = 0;
+   return 4;
 }
 
 // O(n)

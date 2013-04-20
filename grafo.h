@@ -19,20 +19,20 @@
 	void imprime_grafo(Grafo *grafo);
 
 	// Insere aresta entre os vértices v1 e v2
-	void insere_aresta(int v1, int v2, Grafo *grafo);
+	int insere_aresta(int v1, int v2, Grafo *grafo);
 
 	// Insere arco entre os vértices v1 e v2
-	void insere_arco(int v1, int v2, Grafo *grafo);
+	int insere_arco(int v1, int v2, Grafo *grafo);
 
 	// Verifica a existência de aresta entre dois vértices
 	// ou arcos de v1 para v2 e de v2 para v1
-	void existe_aresta(int v1, int v2, Grafo *grafo);
+	int existe_aresta(int v1, int v2, Grafo *grafo);
 
 	// Remove aresta entre os vértices v1 e v2
 	int retira_aresta(int v1, int v2, Grafo *grafo);
 
 	// Remove arco entre os vértices v1 e v2
-	void retira_arco(int v1, int v2, Grafo *grafo);
+	int retira_arco(int v1, int v2, Grafo *grafo);
 
 	// Imprime os vértices adjacêntes ao vértice v1
 	void vertice_adjacente(int v1, Grafo *grafo);
